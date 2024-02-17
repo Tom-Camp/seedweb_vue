@@ -1,16 +1,31 @@
-<script setup>
-import WelcomeItem from './WelcomeItem.vue'
-</script>
 
 <template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
-
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
+  <tr>
+    <td>{{ parsedData.air_temp }}&deg;</td>
+    <td>{{ parsedData.humidity }}%</td>
+    <td>{{ parsedData.soil_temp }}&deg;</td>
+    <td>{{ parsedData.moisture }}</td>
+  </tr>
 </template>
+
+<script>
+export default {
+  name: "SensorData",
+  props: {
+    dataRow: {
+      type: String,
+      required: true,
+    }
+  },
+  computed: {
+    parsedData() {
+      try {
+        return JSON.parse(this.dataRow.sensor_data);
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+        return null;
+      }
+    }
+  }
+};
+</script>

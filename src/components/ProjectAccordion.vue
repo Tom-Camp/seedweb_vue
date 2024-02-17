@@ -19,13 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="data in project.data">
-            <td>{{ data.created_date }}</td>
-            <td>{{ data.sensor_data.air_temp }}&deg; F</td>
-            <td>{{ data.sensor_data.humidity }}%</td>
-            <td>{{ data.sensor_data.soil_temp }}&deg; F</td>
-            <td>{{ data.sensor_data.moisture }}</td>
-          </tr>
+          <SensorData :dataRow="project.sensor_data"  />
         </tbody>
       </table>
     </div>
@@ -33,7 +27,12 @@
 </template>
 
 <script>
+import SensorData from "@/components/SensorData.vue";
 export default {
+  name: "ProjectAccordion",
+  components: {
+    SensorData,
+  },
   props: {
     project: {
       type: Object,

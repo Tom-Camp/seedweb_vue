@@ -1,32 +1,17 @@
 <template>
-  <main>
-    <ProjectAccordion
-        v-for="project in projects"
-        :key="project.id"
-        :project="project"
-    />
-  </main>
+   <header>
+    <nav>
+      <ul>
+        <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
+        <li><router-link :to="{ name: 'Projects' }">Projects</router-link></li>
+      </ul>
+    </nav>
+   </header>
+  <router-view/>
 </template>
 
 <script>
-import ProjectAccordion from "@/components/ProjectAccordion.vue";
-import axios from "axios";
-
 export default {
-  name: "app",
-  components: {
-    ProjectAccordion
-  },
-  data () {
-    return {
-      projects: null
-    }
-  },
-  mounted () {
-    axios
-      .get('http://localhost:5000/api/')
-      .then(response => (this.projects = response.data))
-  }
 }
 </script>
 

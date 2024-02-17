@@ -11,3 +11,24 @@ details {
     }
   }
 }
+
+.margin-top-1 {
+  margin-top: 1em
+}
+
+.margin-bottom-05 {
+  margin-bottom: .5em;
+}
+
+.led {
+  height: 30px;
+  width: 30px;
+  margin: .25em;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+article {
+  margin: .25em;
+  padding: .5em;
+}
