@@ -14,7 +14,7 @@
         <router-view/>
       </td>
       <td>{{ project.description }}</td>
-      <td>Edit</td>
+      <td><router-link :to="{ name: 'ProjectEditLink', params: { pid: project.id } }">Edit</router-link></td>
     </tr>
   </table>
 </template>

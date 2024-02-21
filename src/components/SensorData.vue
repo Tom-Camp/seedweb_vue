@@ -1,10 +1,11 @@
 
 <template>
   <tr>
-    <td>{{ parsedData.air_temp }}&deg;</td>
-    <td>{{ parsedData.humidity }}%</td>
-    <td>{{ parsedData.soil_temp }}&deg;</td>
-    <td>{{ parsedData.moisture }}</td>
+    <td>{{ dataRow.created_date }}</td>
+    <td>{{ dataRow.sensor_data.air_temp }}&deg;</td>
+    <td>{{ dataRow.sensor_data.humidity }}%</td>
+    <td>{{ dataRow.sensor_data.soil_temp }}&deg;</td>
+    <td>{{ dataRow.sensor_data.moisture }}</td>
   </tr>
 </template>
 
@@ -13,18 +14,8 @@ export default {
   name: "SensorData",
   props: {
     dataRow: {
-      type: String,
+      type: Object,
       required: true,
-    }
-  },
-  computed: {
-    parsedData() {
-      try {
-        return JSON.parse(this.dataRow.sensor_data);
-      } catch (error) {
-        console.error('Error parsing JSON:', error);
-        return null;
-      }
     }
   }
 };

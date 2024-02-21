@@ -1,3 +1,7 @@
+body main {
+  padding-top: 0.5em;
+}
+
 details.accordion .accordion-header hgroup {
   margin-bottom: 5px;
 }
