@@ -22,6 +22,11 @@
       value="Update"
     />
   </form>
+  <section>
+    <router-link :to="{ name: 'ProjectDeleteLink', params: { pid: project.id } }">
+      <button class="secondary pico-background-red-500 normal">Delete {{ project.name }}</button>
+    </router-link>
+  </section>
 </template>
 
 <script>
@@ -36,7 +41,6 @@ export default {
       profiles: {}
     }
   },
-
   mounted () {
     const projectId = this.$route.params.pid;
     axios.all([

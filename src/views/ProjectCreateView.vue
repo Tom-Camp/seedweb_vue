@@ -56,10 +56,8 @@ export default {
   },
   methods: {
     handleSubmit() {
-      // console.log(this.formData);
-      // const jsonData = JSON.stringify(this.formData);
-      // console.log(jsonData);
-      axios.post(`http://localhost:8000/projects/`, this.formData)
+      axios
+        .post(`http://localhost:8000/projects/`, this.formData)
         .then(response => {
           this.$router.push({ name: "ProjectLink", params: { pid: response.data.id } });
         })

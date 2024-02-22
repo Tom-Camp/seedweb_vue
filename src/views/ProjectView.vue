@@ -12,8 +12,8 @@
     <summary><b>Notes</b></summary>
     <Note v-for="note in project.notes" :note="note"/>
   </details>
-  <section>
-    <h5>Sensor Data</h5>
+  <details open>
+    <summary><b>Sensor Data</b></summary>
     <table>
       <thead>
         <tr>
@@ -28,7 +28,7 @@
         <SensorData v-for="sensorData in project.data" :dataRow="sensorData"/>
       </tbody>
     </table>
-  </section>
+  </details>
 </template>
 
 <script>
