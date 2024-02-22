@@ -1,5 +1,9 @@
 <template>
   <h1>Projects</h1>
+  <router-link :to="{ name: 'ProjectCreateLink' }">
+    <button class="normal float-right">Create Project</button>
+  </router-link>
+  <router-view/>
   <table>
     <thead>
       <tr>

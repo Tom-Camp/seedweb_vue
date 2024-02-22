@@ -2,6 +2,11 @@ body main {
   padding-top: 0.5em;
 }
 
+button.normal {
+  padding: 5px 10px;
+  width: fit-content;
+}
+
 details.accordion .accordion-header hgroup {
   margin-bottom: 5px;
 }
@@ -29,6 +34,10 @@ details.accordion .accordion-header hgroup p {
 article {
   margin: 0.25em;
   padding: 0.5em;
+}
+
+.float-right {
+  float: right;
 }
 
 /*# sourceMappingURL=styles.css.map */
