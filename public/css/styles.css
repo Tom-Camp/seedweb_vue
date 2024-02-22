@@ -1,3 +1,13 @@
+:root {
+  --pico-color-red-500: #d93526;
+  --pico-color-light: #fff;
+}
+
+.pico-background-red-500 {
+  background-color: var(--pico-color-red-500);
+  color: var(--pico-color-light);
+}
+
 body main {
   padding-top: 0.5em;
 }
