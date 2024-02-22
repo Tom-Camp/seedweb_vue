@@ -1,10 +1,16 @@
 :root {
+  --pico-color-jade-500: #00895a;
   --pico-color-red-500: #d93526;
   --pico-color-light: #fff;
 }
 
 .pico-background-red-500 {
   background-color: var(--pico-color-red-500);
+  color: var(--pico-color-light);
+}
+
+.pico-background-green-500 {
+  background-color: var(--pico-color-jade-500);
   color: var(--pico-color-light);
 }
 
