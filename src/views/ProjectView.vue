@@ -29,6 +29,9 @@
       </tbody>
     </table>
   </details>
+  <router-link :to="{ name: 'ProjectEditLink', params: { pid: project.id } }">
+    <button class="normal pico-background-green-500">Edit {{ project.name }}</button>
+  </router-link>
 </template>
 
 <script>
