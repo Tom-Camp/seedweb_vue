@@ -10,8 +10,7 @@
   </section>
   <details>
     <summary><b>Notes</b></summary>
-    <Note v-if="project.notes" v-for="note in project.notes" :note="note"/>
-    <p v-else>There are no notes at this time.</p>
+    <Note v-for="note in project.notes" :note="note"/>
   </details>
   <section>
     <h5>Sensor Data</h5>

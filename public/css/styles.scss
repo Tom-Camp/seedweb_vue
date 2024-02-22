@@ -3,6 +3,13 @@ body {
     padding-top: .5em;
   }
 }
+button {
+  &.normal {
+    padding: 5px 10px;
+    width: fit-content;
+  }
+}
+
 details {
   &.accordion {
     .accordion-header {
@@ -36,4 +43,8 @@ details {
 article {
   margin: .25em;
   padding: .5em;
+}
+
+.float-right {
+  float: right;
 }
