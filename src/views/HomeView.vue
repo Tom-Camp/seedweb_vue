@@ -1,29 +1,49 @@
 <template>
   <section>
     <h2>Projects</h2>
-    <div class="grid">
-      <ProjectGridBox
-          v-for="project in projects"
-          :key="project.id"
-          :pid="project.id"
-          :title="project.name"
-          :body="project.description"
-      />
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Project</th>
+          <th scope="col">Description</th>
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="project in projects">
+          <td>
+            <router-link :to="{ name: 'ProjectLink', params: { pid: project.id } }">{{ project.name }}</router-link>
+            <router-view/>
+          </td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.start }}</td>
+          <td>{{ project.end }}</td>
+        </tr>
+      </tbody>
+    </table>
     <p class="margin-top-1"><router-link :to="{ name: 'Projects' }">View all Projects &raquo;</router-link></p>
     <router-view/>
   </section>
   <section>
     <h2>Profiles</h2>
-    <div class="grid">
-      <ProfileGridBox
-          v-for="profile in profiles"
-          :key="profile.id"
-          :pid="profile.id"
-          :title="profile.name"
-          :colors="profile.colors"
-      />
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Profile</th>
+          <th scope="col">Color pattern</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="profile in profiles">
+          <td>
+            <router-link :to="{ name: 'ProfileLink', params: { pid: profile.id } }">{{ profile.name }}</router-link>
+            <router-view/>
+          </td>
+          <td><Color :color="profile.colors"/></td>
+        </tr>
+      </tbody>
+    </table>
     <p class="margin-top-1"><router-link :to="{ name: 'Profiles' }">View all Profiles &raquo;</router-link></p>
     <router-view/>
 </section>
@@ -33,10 +53,12 @@
 import axios from 'axios';
 import ProjectGridBox from "@/components/ProjectGridBox.vue";
 import ProfileGridBox from "@/components/ProfileGridBox.vue";
+import Color from "@/components/Color.vue";
 
 export default {
   name: "HomeView",
   components: {
+    Color,
     ProjectGridBox,
     ProfileGridBox
   },
